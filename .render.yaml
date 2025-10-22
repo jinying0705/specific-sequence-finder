@@ -4,6 +4,13 @@ services:
     env: python
     plan: free
     buildCommand: |
-      apt-get update && apt-get install -y ncbi-blast+ &&
+      # 安装 Miniconda
+      curl -fsSLo ~/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+      bash ~/miniconda.sh -b -p $HOME/miniconda
+      export PATH="$HOME/miniconda/bin:$PATH"
+
+      # 安装依赖
+      conda install -y -c bioconda blast
       pip install -r requirements.txt
+
     startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
