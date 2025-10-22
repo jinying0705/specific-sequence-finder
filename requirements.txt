@@ -1,5 +1,7 @@
-biopython
-pyblast
 streamlit
+biopython
+requests
+
+
 
 
