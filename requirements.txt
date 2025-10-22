@@ -1,5 +1,5 @@
-streamlit
 biopython
-pandas
-numpy
+pyblast
+streamlit
+
 
