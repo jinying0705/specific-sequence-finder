@@ -12,7 +12,6 @@ services:
       # 创建并激活环境，安装 Bioconda 的 BLAST
       conda install -y -c bioconda blast
       pip install -r requirements.txt
-
     startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
 
 
